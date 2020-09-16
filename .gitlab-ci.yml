@@ -1,4 +1,5 @@
 job 0: &job
+  stage: test
   script: echo 1
   only:
     - master
