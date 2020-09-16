@@ -1,20 +1,23 @@
+stages:
+  - job-0
+  - job-1
+  - job-2
+  - job-3
+
 job 0: &job
-  stage: test
+  stage: job-0
   script: echo 1
   only:
     - master
 
 job 1:
   <<: *job
-  needs:
-    - job 0
+  stage: job-1
 
 job 2:
   <<: *job
-  needs:
-    - job 1
+  stage: job-2
 
 job 3:
   <<: *job
-  needs:
-    - job 2
+  stage: job-3
