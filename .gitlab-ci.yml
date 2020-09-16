@@ -2,32 +2,27 @@ stages:
   - build
   - test
   - deploy
-  - report
 
 build:
   stage: build
   script: echo Build!
+  except:
+    - master
 
-test1:
+unit test:
   stage: test
-  script: echo Test1!
+  script: echo Unit!
 
-test2:
+e2e test:
   stage: test
-  script: echo Test2!
-  allow_failure: true
-
-diagnostics:
-  stage: test
-  script: echo Run diagnostics ...
-  when: on_failure
+  script: echo E2E!
+  only:
+    - merge_requests
 
 deploy:
   stage: deploy
   script: echo Run deploy ...
   when: manual
   allow_failure: false
-
-report:
-  stage: report
-  script: echo report
+  only:
+    - master
