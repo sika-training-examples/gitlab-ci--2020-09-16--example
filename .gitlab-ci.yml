@@ -1,23 +1,12 @@
-stages:
-  - job-0
-  - job-1
-  - job-2
-  - job-3
 
-job 0: &job
-  stage: job-0
-  script: echo 1
+Build A:
+  script: echo Cuild A ...
   only:
-    - master
+    changes:
+      - a/**
 
-job 1:
-  <<: *job
-  stage: job-1
-
-job 2:
-  <<: *job
-  stage: job-2
-
-job 3:
-  <<: *job
-  stage: job-3
+Build B:
+  script: echo Cuild B ...
+  only:
+    changes:
+      - b/**
