@@ -3,7 +3,6 @@ variables:
 
 job:
   variables:
-    IMAGE2: $IMAGE-aaa
   script:
-    - echo docker build -t $IMAGE2 .
-    - echo docker push $IMAGE2
+    - echo docker build -t $IMAGE .
+    - echo docker push $IMAGE
