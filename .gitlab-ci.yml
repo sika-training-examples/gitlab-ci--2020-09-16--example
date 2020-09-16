@@ -1,2 +1,10 @@
-job:
-  script: env
+variables:
+  MY_YAML_GLOBAL_VARIABLE: yaml global
+
+job1:
+  script: env | grep MY_
+
+job2:
+  variables:
+    MY_YAML_LOCAL_VARIABLE: yaml local
+  script: env | grep MY_
