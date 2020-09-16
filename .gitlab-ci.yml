@@ -31,3 +31,4 @@ test B:
     - build_B
   needs:
     - build_B
+    - build_A
