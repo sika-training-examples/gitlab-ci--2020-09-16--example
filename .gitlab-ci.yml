@@ -1,14 +1,2 @@
-
-Build A:
-  script:
-    - echo Cuild A ...
-    - echo fooo
-  only:
-    changes:
-      - a/**
-
-Build B:
-  script: echo Cuild B ...
-  only:
-    changes:
-      - b/**
+job:
+  script: env
