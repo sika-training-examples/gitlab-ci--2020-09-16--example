@@ -2,6 +2,7 @@ stages:
     - build
 
 build:
+    image: golang:1.14
     stage: build
     script:
         - go build hello.go
