@@ -3,7 +3,7 @@ image: ondrejsika/ci
 stages:
     - build
 
-build:
+build linux: &build
     image: golang:1.14
     stage: build
     script:
@@ -12,6 +12,12 @@ build:
         paths:
             - hello
 
+build mac:
+    <<: *build
+    variables:
+        GOOS: darwin
+    
+    
 docker build:
     stage: build
     script:
