@@ -1,15 +1,2 @@
-variables:
-  MY_YAML_GLOBAL_VARIABLE: yaml global
-
-.job: &job
-  script: echo Build $FOO
-
 job1:
-  <<: *job
-  variables:
-    FOO: foo
-
-job2:
-  <<: *job
-  variables:
-    FOO: bar
+  script: cat $MY_PROJECT_FILE
