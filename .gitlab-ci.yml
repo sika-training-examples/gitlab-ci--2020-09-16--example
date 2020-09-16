@@ -1,4 +1,7 @@
+variables:
+  IMAGE: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+
 job:
   script:
-    - echo docker build -t $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG .
-    - echo docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+    - echo docker build -t $IMAGE .
+    - echo docker push $IMAGE
