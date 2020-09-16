@@ -1,1 +1,6 @@
+stages:
+    - build
 
+build:
+    scritp:
+        - go build hello.go
