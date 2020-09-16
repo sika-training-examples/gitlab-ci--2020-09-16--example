@@ -1,10 +1,15 @@
 variables:
   MY_YAML_GLOBAL_VARIABLE: yaml global
 
+.job: &job
+  script: echo Build $FOO
+
 job1:
-  script: env | grep MY_
+  <<: *job
+  variables:
+    FOO: foo
 
 job2:
+  <<: *job
   variables:
-    MY_YAML_LOCAL_VARIABLE: yaml local
-  script: env | grep MY_
+    FOO: bar
