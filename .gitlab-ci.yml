@@ -1,18 +1,17 @@
-
 stages:
   - build
   - test
 
-build:
+build_A:
   stage: build
-  script:
-    - mkdir -p out
-    - echo '<h1>Hello World!</h1>' > out/index.html
-  artifacts:
-    paths:
-      - out
+  script: mkdir -p out && echo '<h1>Hello from Project A!</h1>' > out/index.html
+  artifacts: { paths: [out] }
+
+build_B:
+  stage: build
+  script: mkdir -p out && echo '<h1>Hello from Project B!</h1>' > out/index.html
+  artifacts: { paths: [out] }
 
 test:
   stage: test
-  script:
-    - cat out/index.html
+  script: cat out/index.html
