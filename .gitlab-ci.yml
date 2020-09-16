@@ -13,7 +13,7 @@ test1:
 
 test2:
   stage: test
-  script: echo Test2! && sleep 30 && false
+  script: echo Test2!
   allow_failure: true
 
 diagnostics:
@@ -23,5 +23,5 @@ diagnostics:
 
 deploy:
   stage: deploy
-  script: echo Run deploy ...
+  script: echo Run deploy ... && false
   when: manual
