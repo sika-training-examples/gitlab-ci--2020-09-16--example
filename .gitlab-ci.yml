@@ -2,6 +2,7 @@ stages:
   - build
   - test
   - deploy
+  - report
 
 build:
   stage: build
@@ -25,3 +26,7 @@ deploy:
   stage: deploy
   script: echo Run deploy ... && false
   when: manual
+
+report:
+  stage: report
+  script: echo report
