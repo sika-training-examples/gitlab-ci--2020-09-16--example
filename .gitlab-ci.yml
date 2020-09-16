@@ -1,7 +1,7 @@
 test:
   image: ondrejsika/pytest
   script:
-    - pytest --junitxml=report.xml
+    - echo hello
   artifacts:
-    reports:
-      junit: report.xml
+      reports:
+        terraform: tfplan.json
