@@ -1,2 +1,1 @@
-# ondrejsika
-
+# Hello World in Go

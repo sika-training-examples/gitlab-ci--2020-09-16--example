@@ -1,7 +1,1 @@
-test:
-  image: ondrejsika/pytest
-  script:
-    - echo hello
-  artifacts:
-      reports:
-        terraform: tfplan.json
+
