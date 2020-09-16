@@ -1,10 +1,13 @@
 job:
-  script: echo Hello World!
+  script: echo Hello World! && sleep 10 && false
   tags:
     - shell
 job1:
-  script: echo Hello World!
+  script: 
+    echo Hello World! && \
+    sleep 10
 job2:
   script:
     - echo Hello World!
     - echo Ahoj Svete!
+    - sleep 10
