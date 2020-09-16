@@ -1,28 +1,16 @@
-deploy:
-  script: echo 'Deploy!'
-  environment:
-    name: dev/$CI_COMMIT_REF_SLUG
-    url: https://$CI_COMMIT_REF_SLUG.dev.company.com
-    on_stop: stop
+# .gitlab-ci.yml
+pipeline_a:
+  trigger:
+    include: a/.gitlab-ci.yml
+    strategy: depend
+  only:
+    changes:
+      - a/**
 
-stop:
-  script: echo Stop!
-  when: manual
-  environment:
-    name: dev/$CI_COMMIT_REF_SLUG
-    action: stop
-
-deploy prod:
-  script: echo 'Deploy!'
-  when: manual
-  environment:
-    name: prod
-    url: https://app1.prod.company.com
-    on_stop: stop prod
-
-stop prod:
-  script: echo Stop!
-  when: manual
-  environment:
-    name: prod
-    action: stop
+pipeline_b:
+  trigger:
+    include: b/.gitlab-ci.yml
+    strategy: depend
+  only:
+    changes:
+      - b/**
