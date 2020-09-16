@@ -13,7 +13,8 @@ test1:
 
 test2:
   stage: test
-  script: echo Test2!
+  script: echo Test2! && sleep 30 && false
+  allow_failure: true
 
 diagnostics:
   stage: test
