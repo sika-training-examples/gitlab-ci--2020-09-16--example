@@ -21,13 +21,13 @@ test A:
   script: cat out/index.html
   dependencies: 
     - build_A
-  # needs:
-  #   - build_A
+  needs:
+    - build_A
 
 test B:
   stage: test
   script: cat out/index.html
   dependencies: 
     - build_B
-  # needs:
-  #   - build_B
+  needs:
+    - build_B
