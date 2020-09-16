@@ -1,8 +1,8 @@
-variables:
-  IMAGE: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
-
 job:
-  variables:
+  # cache:
+  #   key: ${CI_COMMIT_REF_SLUG}
+  #   paths:
+  #     - now
   script:
-    - echo docker build -t $IMAGE .
-    - echo docker push $IMAGE
+    - date >> now
+    - cat now
