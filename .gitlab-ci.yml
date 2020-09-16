@@ -12,7 +12,7 @@ build:
 unit test:
   stage: test
   script: echo Unit! && false
-  retry: 3
+  retry: 2
 
 e2e test:
   stage: test
