@@ -1,26 +1,12 @@
-image: ondrejsika/ci
+deploy:
+  script: echo 'Deploy!'
+  environment:
+    name: dev/$CI_COMMIT_REF_SLUG
+    url: https://$CI_COMMIT_REF_SLUG.dev.company.com
 
-stages:
-    - build
-
-build linux: &build
-    image: golang:1.14
-    stage: build
-    script:
-        - go build hello.go
-    artifacts:
-        paths:
-            - hello
-
-build mac:
-    <<: *build
-    variables:
-        GOOS: darwin
-    
-    
-docker build:
-    stage: build
-    script:
-        - docker login $CI_REGISTRY -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD
-        - docker build -t $CI_REGISTRY_IMAGE .
-        - docker push $CI_REGISTRY_IMAGE
+deploy prod:
+  script: echo 'Deploy!'
+  when: manual
+  environment:
+    name: prod
+    url: https://app1.prod.company.com
