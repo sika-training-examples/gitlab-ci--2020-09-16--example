@@ -1,29 +1,12 @@
-stages:
-  - build
-  - test
-  - deploy
+job 0: &job
+  script: echo 1
+  only: master
 
-build:
-  stage: build
-  script: echo Build!
-  except:
-    - master
+job 1:
+  <<: *job
 
-unit test:
-  stage: test
-  script: echo Unit! && false
-  retry: 2
+job 2:
+  <<: *job
 
-e2e test:
-  stage: test
-  script: echo E2E!
-  only:
-    - merge_requests
-
-deploy:
-  stage: deploy
-  script: echo Run deploy ...
-  when: manual
-  allow_failure: false
-  only:
-    - master
+job 3:
+  <<: *job
