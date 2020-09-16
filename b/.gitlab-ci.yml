@@ -1,6 +1,20 @@
+# .gitlab-ci.yml
+stages:
+  - generate
+  - pipeline
 
-build:
-  script: echo Build service B
+generate:
+  stage: generate
+  image: python:3.7
+  script: python generate-gitlab-ci.py
+  artifacts:
+    paths:
+      - .gitlab-ci.generated.yml
 
-deploy:
-  script: echo Deploy service B
+pipeline:
+  stage: pipeline
+  trigger:
+    include:
+      - artifact: .gitlab-ci.generated.yml
+        job: generate
+    strategy: depend
