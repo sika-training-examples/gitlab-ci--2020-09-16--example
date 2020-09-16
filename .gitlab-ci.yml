@@ -1,2 +1,3 @@
-job1:
-  script: cat $MY_PROJECT_FILE
+job:
+  script:
+    - echo docker pus $CI_REGISTY_IMAGE:$CI_COMMIT_REF_SLUF
