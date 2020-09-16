@@ -1,6 +1,7 @@
 stages:
   - build
   - test
+  - deploy
 
 build:
   stage: build
@@ -13,3 +14,13 @@ test1:
 test2:
   stage: test
   script: echo Test2!
+
+diagnostics:
+  stage: test
+  script: echo Run diagnostics ...
+  when: on_failure
+
+deploy:
+  stage: deploy
+  script: echo Run deploy ...
+  when: manual
