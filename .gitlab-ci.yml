@@ -4,7 +4,7 @@ stages:
 
 build:
   stage: build
-  script: echo Build!
+  script: echo Build! && sleep 10
 
 test1:
   stage: test
