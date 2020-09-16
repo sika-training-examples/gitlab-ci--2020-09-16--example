@@ -1,6 +1,8 @@
 
 Build A:
-  script: echo Cuild A ...
+  script:
+    - echo Cuild A ...
+    - echo fooo
   only:
     changes:
       - a/**
