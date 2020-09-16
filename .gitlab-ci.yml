@@ -8,6 +8,9 @@ build:
     stage: build
     script:
         - go build hello.go
+    artifacts:
+        path:
+            - hello
 
 docker build:
     stage: build
