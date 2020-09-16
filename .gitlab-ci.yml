@@ -5,9 +5,15 @@ job 0: &job
 
 job 1:
   <<: *job
+  needs:
+    - job 0
 
 job 2:
   <<: *job
+  needs:
+    - job 1
 
 job 3:
   <<: *job
+  needs:
+    - job 2
