@@ -9,7 +9,7 @@ build:
     script:
         - go build hello.go
     artifacts:
-        path:
+        paths:
             - hello
 
 docker build:
