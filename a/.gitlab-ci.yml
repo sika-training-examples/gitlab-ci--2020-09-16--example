@@ -1,6 +1,0 @@
-
-build:
-  script: echo Build service A
-
-deploy:
-  script: echo Deploy service A
