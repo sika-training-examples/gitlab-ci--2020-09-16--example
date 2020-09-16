@@ -1,6 +1,7 @@
 job 0: &job
   script: echo 1
-  only: master
+  only:
+    - master
 
 job 1:
   <<: *job
