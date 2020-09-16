@@ -3,7 +3,7 @@ before_script:
   - echo Global before
 
 after_script:
-  - echo Global after
+  - echo Global after && false
 
 job1:
   script: echo Job1!
