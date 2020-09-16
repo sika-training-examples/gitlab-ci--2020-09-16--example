@@ -24,7 +24,7 @@ diagnostics:
 
 deploy:
   stage: deploy
-  script: echo Run deploy ... && false
+  script: echo Run deploy ...
   when: manual
   allow_failure: false
 
